@@ -1,0 +1,10 @@
+# BOOK_HUNTER
+
+Une application en PHP MVC Procédural
+
+- PHP
+- MVC
+- PROCEDURAL
+- VERSIONING (GITKRAKEN)
+- PARTIALS
+- SOUS-ROUTERS
