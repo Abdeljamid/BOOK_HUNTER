@@ -9,7 +9,7 @@
             <span
               class="bg-white text-gray-800 px-2 py-1 rounded-md text-sm font-semibold absolute top-2 left-2"
             >
-            <?php echo $book['name']; ?>
+            <?php echo $book['categoriesName']; ?>
             </span>
             <img
               class="w-full h-48 object-cover"
@@ -21,7 +21,8 @@
                 <span
                   class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold mr-2"
                 >
-                <?php echo $book['name']; ?>
+
+                <?php echo $book['tagsName']; ?>
                 </span>
 
               </div>

@@ -6,7 +6,7 @@ use \PDO;
 
 function findAll (PDO $connexion): array {
 
-    $sql= "SELECT *
+    $sql= "SELECT *, c.name AS categoriesName, t.name AS tagsName  
         FROM books b
         
         JOIN authors a ON a.id = b.author_id

@@ -10,7 +10,6 @@ function findAll (PDO $connexion): array {
         FROM authors a
         JOIN books b ON a.id = b.author_id
         JOIN users_notations un ON un.book_id = b.id
-        
         ORDER BY note DESC
         LIMIT 3;";
     return $connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
