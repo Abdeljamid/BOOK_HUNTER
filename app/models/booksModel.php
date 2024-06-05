@@ -4,7 +4,7 @@ namespace App\Models\BooksModel;
 
 use \PDO;
 
-function findAll (PDO $connexion): array {
+function findAll (PDO $connexion, int $limit = 6): array {
 
     $sql= "SELECT *, c.name AS categoriesName, t.name AS tagsName  
         FROM books b
@@ -16,8 +16,11 @@ function findAll (PDO $connexion): array {
         JOIN categories c ON b.id = c.id
         
         ORDER BY un.note DESC
-        LIMIT 3;";
-    return $connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        LIMIT :limit;";
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':limit', $limit, PDO::PARAM_INT);
+    $rs->execute();
+    return $rs->fetchall(PDO::FETCH_ASSOC);
     
 
 }
